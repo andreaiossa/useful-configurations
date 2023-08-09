@@ -32,7 +32,7 @@ function do_it() {
   fi
 
   echo "Moving ${FULL_THEME_PATH} to ${DESTINATION_FOLDER}..."
-  mv ${FULL_THEME_PATH} ${DESTINATION_FOLDER}
+  cp ${FULL_THEME_PATH} ${DESTINATION_FOLDER}
 
   echo "Theme applied correctly"
 }
