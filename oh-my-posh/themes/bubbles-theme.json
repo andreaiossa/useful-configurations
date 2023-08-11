@@ -34,6 +34,7 @@
       ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
@@ -73,13 +74,12 @@
           },
           "template": "{{ if .Error }} {{ end }}"
         }
-      ],
-      "type": "prompt"
+      ]
     },
-    {
+    { 
       "type": "prompt",
-      "description": "code languages",
       "alignment": "right",
+      "description": "language and git segments",
       "segments": [
         {
           "type": "python",
@@ -129,14 +129,7 @@
           "style": "diamond",
           "template": "\ue738{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "trailing_diamond": "\ue0b4"
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "description": "git segments",
-      "segments": [
+        },
         {
           "type": "git",
           "background": "#29315A",
