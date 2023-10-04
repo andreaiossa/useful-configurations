@@ -18,3 +18,8 @@ set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
 
 # <<< NVM >>>
 __check_nvm
+
+# <<< dock-tales >>>
+set --export --prepend PATH "/Users/yoza/.rd/bin" # monster rancher desktop
+alias pm="podman"
+alias pmm="podman machine"
