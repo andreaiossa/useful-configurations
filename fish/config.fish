@@ -14,7 +14,7 @@ alias k="kubectl"
 kubectl completion fish | source
 
 # <<< GLOBAL VARIABLES >>>
-set -U NUCLEUS /Users/yoza/Desktop/nucleus
+set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
 
 # <<< NVM >>>
 __check_nvm
