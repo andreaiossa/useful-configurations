@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "description": "Settings file for handling installation of podman machines",
+  "machines": [
+    {
+      "name": "local-cluster",
+      "cpus": 6,
+      "memory": 6000,
+      "diskSize": 60
+    }
+  ],
+  "author": "andreaiossa97@gmail.com"
+}

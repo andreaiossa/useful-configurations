@@ -1,0 +1,8 @@
+{
+  "name": "podman-init",
+  "dependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "andreaiossa97@gmail.com"
+}
