@@ -9,7 +9,6 @@ eval /usr/local/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" "hook" $
 
 # <<< KUBE >>>
 if [ -f '/Users/yoza/google-cloud-sdk/path.fish.inc' ]; . '/Users/yoza/google-cloud-sdk/path.fish.inc'; end # updates PATH for the Google Cloud SDK.
-#export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 set -x -U USE_GKE_GCLOUD_AUTH_PLUGIN True
 
 # <<< Aliases >>>
@@ -18,12 +17,6 @@ alias m8="microk8s"
 alias kk="microk8s kubectl"
 alias pm="podman"
 alias pmm="podman machine"
-
-
-# <<< Completions >>>
-kubectl completion fish | source
-k3d completion fish | source
-podman completion fish | source
 
 # <<< GLOBAL VARIABLES >>>
 set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
