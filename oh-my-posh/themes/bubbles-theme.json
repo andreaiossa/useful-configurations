@@ -72,7 +72,7 @@
           "trailing_diamond": "\ue0b4",
           "properties": {
           },
-          "template": "{{ if .Error }} {{ end }}"
+          "template": "{{ if .Error }}  {{ .Code }}{{ end }}"
         }
       ]
     },
