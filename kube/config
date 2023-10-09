@@ -28,11 +28,6 @@ contexts:
     user: gke_openmove-1475230942894_europe-west4-c_demo-env
   name: demo
 - context:
-    cluster: kind-kind
-    namespace: kube-system
-    user: kind-kind
-  name: kind-kind
-- context:
     cluster: microk8s-cluster
     user: admin
   name: microk8s
