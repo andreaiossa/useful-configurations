@@ -24,7 +24,6 @@ alias pmm="podman machine"
 kubectl completion fish | source
 k3d completion fish | source
 podman completion fish | source
-kind completion fish | source
 
 # <<< GLOBAL VARIABLES >>>
 set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
