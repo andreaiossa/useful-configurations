@@ -20,10 +20,15 @@ alias pmm="podman machine"
 
 # <<< GLOBAL VARIABLES >>>
 set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
+set -x -U DOCKER_HOST "unix:///Users/yoza/.local/share/containers/podman/machine/qemu/podman.sock"
 
 # <<< NVM >>>
 __check_nvm
 
-# <<< dock-tales >>>
-set --export --prepend PATH "/Users/yoza/.rd/bin" # monster rancher desktop
-set -x -U DOCKER_HOST "unix:///Users/yoza/.local/share/containers/podman/machine/qemu/podman.sock"
+# <<< vscode integrated terminal >>>
+# if test -n "$VSCODE_INTEGRATED_TERMINAL"
+#   echo "Running inside vscode integrated terminal. Using default nvm."
+#   nvm use default &> /dev/null
+# else
+#   __check_nvm
+# end
