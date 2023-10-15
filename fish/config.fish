@@ -21,10 +21,15 @@ alias pmm="podman machine"
 # <<< GLOBAL VARIABLES >>>
 set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
 set -x -U DOCKER_HOST "unix:///Users/yoza/.local/share/containers/podman/machine/qemu/podman.sock"
+set -U run_variables_file_path "$HOME/.config/fish/run_variables"
 
 # <<< NVM >>>
 __check_nvm
 
+# << RUN AUX >>
+if not test -e $run_variables_file_path
+  touch $run_variables_file_path
+end 
 # <<< vscode integrated terminal >>>
 # if test -n "$VSCODE_INTEGRATED_TERMINAL"
 #   echo "Running inside vscode integrated terminal. Using default nvm."

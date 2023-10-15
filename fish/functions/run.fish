@@ -8,11 +8,33 @@ function run
 
       set -U "fish_run_command_original_name_$command_alias" $new_command
       set -U "fish_run_command_folder_$command_alias" $PWD 
+      echo "$command_alias;$new_command;$PWD" >> $run_variables_file_path
 
     else
       echo "Additional arguments 'command' and 'alias' are required to complete this action"
       return 1
     end
+  end
+
+  function remove_run_variable
+    set -l command_alias $argv[1]
+
+     if set -q command_alias
+      echo "Request to delete run command with alias $command_alias":
+
+      set -e "fish_run_command_original_name_$command_alias"
+      set -e "fish_run_command_folder_$command_alias"
+
+      echo (cat $run_variables_file_path | grep -v "$command_alias;" | string collect) > $run_variables_file_path
+
+    else
+      echo "Additional arguments 'command' is required to complete this action"
+      return 1
+    end
+  end
+
+  function list_run_variables
+    column -t -s ";" $run_variables_file_path 
   end
 
   function run_command
@@ -28,15 +50,26 @@ function run
     "
   end
 
-  set -l options a/add
-  argparse $options -- $argv
+  argparse a/add l/list D/delete -- $argv
 
   if set -q _flag_add
     echo "Add action selected"
     add_new_run_variable $argv
     return 0
-  else
-    echo "Running command"
-    run_command $argv
   end
+
+  if set -q _flag_delete
+    echo "Delete action selected"
+    remove_run_variable $argv
+    return 0
+  end
+
+  if set -q _flag_list
+    echo "List action selected"
+    list_run_variables
+    return 0
+  end
+
+  echo "Running command"
+  run_command $argv
 end
