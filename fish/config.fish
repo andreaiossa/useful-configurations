@@ -24,7 +24,7 @@ set -x -U DOCKER_HOST "unix:///Users/yoza/.local/share/containers/podman/machine
 set -U run_variables_file_path "$HOME/.config/fish/run_variables"
 
 # <<< NVM >>>
-__check_nvm
+__check_nvm &> /dev/null
 
 # << RUN AUX >>
 if not test -e $run_variables_file_path
