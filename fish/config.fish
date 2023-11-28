@@ -20,7 +20,7 @@ alias pm="podman"
 alias pmm="podman machine"
 
 # <<< GLOBAL VARIABLES >>>
-set -x -U NUCLEUS /Users/yoza/Desktop/nucleus
+set -x -U NUCLEUS /Users/yoza/Desktop/projects/nucleus
 set -x -U DOCKER_HOST "unix:///Users/yoza/.local/share/containers/podman/machine/qemu/podman.sock"
 set -U run_variables_file_path "$HOME/.config/fish/run_variables"
 
