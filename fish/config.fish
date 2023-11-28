@@ -14,6 +14,7 @@ set -x -U USE_GKE_GCLOUD_AUTH_PLUGIN True
 
 # <<< Aliases >>>
 alias k="kubectl"
+alias kx="kubectx"
 alias m8="microk8s"
 alias kk="microk8s kubectl"
 alias pm="podman"
