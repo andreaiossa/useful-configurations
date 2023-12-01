@@ -24,6 +24,7 @@ alias pmm="podman machine"
 set -x -U NUCLEUS /Users/yoza/Desktop/projects/nucleus
 set -x -U DOCKER_HOST "unix:///Users/yoza/.local/share/containers/podman/machine/qemu/podman.sock"
 set -U run_variables_file_path "$HOME/.config/fish/run_variables"
+set -U GOPRIVATE "github.com/andreaiossa"
 
 # <<< NVM >>>
 __check_nvm &> /dev/null
