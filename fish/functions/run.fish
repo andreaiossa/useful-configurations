@@ -43,6 +43,8 @@ function run
     echo "  -l, --list                       Display list of saved commands and aliases"
     echo "  -a, --add  COMMAND ALIAS         Save COMMAND to be run in current folder with ALIAS"
     echo "  -D, --delete ALIAS               Delete entry for ALIAS"
+    echo ""
+    echo "Use the ALIAS to run a command in the folder where it was saved"
   end
 
   function run_command
@@ -84,7 +86,10 @@ function run
     return 0
   end
 
-  if test (count $argv) -lt 1 || test (count $argv) -gt 3
+  if test (count $argv) -ne 1
+    echo "Please select an option or a command to be run"
+    echo ""
+
     help_function
     return 0
   end
