@@ -37,6 +37,14 @@ function run
     column -t -s ";" $run_variables_file_path 
   end
 
+  function help_function
+    echo "Options:"
+    echo "  -h, --help                       Display this help message"
+    echo "  -l, --list                       Display list of saved commands and aliases"
+    echo "  -a, --add  COMMAND ALIAS         Save COMMAND to be run in current folder with ALIAS"
+    echo "  -D, --delete ALIAS               Delete entry for ALIAS"
+  end
+
   function run_command
     set -l command_alias $argv[1]
     set array "fish_run_command_original_name_$command_alias" "fish_run_command_folder_$command_alias"
@@ -50,7 +58,7 @@ function run
     "
   end
 
-  argparse a/add l/list D/delete -- $argv
+  argparse a/add l/list D/delete h/help -- $argv
 
   if set -q _flag_add
     echo "Add action selected"
@@ -67,6 +75,17 @@ function run
   if set -q _flag_list
     echo "List action selected"
     list_run_variables
+    return 0
+  end
+
+  if set -q _flag_help
+    echo "Help action selected"
+    help_function
+    return 0
+  end
+
+  if test (count $argv) -lt 1 || test (count $argv) -gt 3
+    help_function
     return 0
   end
 
