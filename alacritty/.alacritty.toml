@@ -1,0 +1,7 @@
+[shell]
+program = "/usr/bin/zsh"
+
+[font]
+normal = { family = "IosevkaTerm NF", style = "Regular"}
+bold = { family = "IosevkaTerm NF", style = "Bold"}
+italic = { family = "IosevkaTerm NF", style = "Italic"}
