@@ -11,6 +11,8 @@ eval /opt/homebrew/Caskroom/miniforge/base/bin/conda "shell.fish" "hook" $argv |
 # <<< KUBE >>>
 if [ -f '/Users/yoza/google-cloud-sdk/path.fish.inc' ]; . '/Users/yoza/google-cloud-sdk/path.fish.inc'; end # updates PATH for the Google Cloud SDK.
 set -x -U USE_GKE_GCLOUD_AUTH_PLUGIN True
+set -gx PATH $PATH $HOME/.krew/bin
+kubectl completion fish | source
 
 # <<< Aliases >>>
 alias k="kubectl"
@@ -19,6 +21,7 @@ alias m8="microk8s"
 alias kk="microk8s kubectl"
 alias pm="podman"
 alias pmm="podman machine"
+alias krew="kubectl krew"
 
 # <<< GLOBAL VARIABLES >>>
 set -x -U NUCLEUS /Users/yoza/Desktop/projects/nucleus
