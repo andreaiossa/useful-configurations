@@ -43,3 +43,9 @@ end
 # else
 #   __check_nvm
 # end
+
+
+
+# << KUBECOLOR INTERCEPTOR >>
+
+use_kubecolor
